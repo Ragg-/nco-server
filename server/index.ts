@@ -1,5 +1,6 @@
 /// <reference path="../declarations.d.ts" />
 
+import * as https from 'https'
 import * as Koa from 'koa'
 import * as session from 'koa-generic-session'
 import * as redisStore from 'koa-redis'
@@ -32,4 +33,5 @@ app.use(koaStatic(__dirname + '/../client/', {index: 'index.html'}))
 app.use(koaConvert(betterBody({multipart: true})))
 app.use(router.routes())
 app.keys = JSON.parse(process.env.COOKIE_KEYS)
-app.listen(process.env.NODE_ENV === 'production' ? 4500 : 8000)
+
+https.createServer({key: '', cert: ''}, app.callback()).listen(process.env.NODE_ENV === 'production' ? 4500 : 8000)
