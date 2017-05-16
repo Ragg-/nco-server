@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "compiled",
+        "target": "es2015",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "jsx": "react",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "es2015",
+            "es2016"
+        ]
+    },
+    "files": [
+        "./server/index"
+    ]
+}

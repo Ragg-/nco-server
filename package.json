@@ -1,0 +1,41 @@
+{
+  "name": "pawoo-working-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ragg <ragg.devpr@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "webpack": "webpack --watch",
+    "run": "node ./compiled/index"
+  },
+  "dependencies": {
+    "cron": "^1.2.1",
+    "dotenv": "^4.0.0",
+    "koa": "^2.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-generic-session": "^1.11.5",
+    "koa-redis": "^3.0.0",
+    "koa-router": "^7.1.1",
+    "koa-static": "^3.0.0",
+    "koa-websocket": "^4.0.0",
+    "koa.io": "^0.0.3",
+    "koa2-better-body": "^0.1.1",
+    "react": "16.0.0-alpha.12",
+    "react-dom": "16.0.0-alpha.12"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^4.0.0",
+    "@types/koa": "^2.0.39",
+    "@types/koa-generic-session": "^1.0.0",
+    "@types/koa-router": "^7.0.22",
+    "@types/koa-static": "^2.0.22",
+    "@types/koa-websocket": "^2.1.0",
+    "awesome-typescript-loader": "^3.1.2",
+    "css-loader": "^0.28.1",
+    "style-loader": "^0.17.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "typescript": "^2.3.2",
+    "webpack": "^2.5.1"
+  }
+}
