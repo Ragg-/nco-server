@@ -11,12 +11,12 @@ import * as Router from 'koa-router'
 import * as koaWebsocket from 'koa-websocket'
 import * as dotenv from 'dotenv'
 
-import * as AuthController from './controllers/auth_controller'
+import * as AuthController from './controllers/AuthController'
 
 dotenv.config()
 
 const router = new Router()
-router.get('/api/auth/signin', AuthController.signin)
+router.get('/api/auth/status', AuthController.status)
 router.post('/api/auth/signin', AuthController.signin)
 
 const app = koaWebsocket(new Koa())
@@ -34,4 +34,8 @@ app.use(koaConvert(betterBody({multipart: true})))
 app.use(router.routes())
 app.keys = JSON.parse(process.env.COOKIE_KEYS)
 
-https.createServer({key: '', cert: ''}, app.callback()).listen(process.env.NODE_ENV === 'production' ? 4500 : 8000)
+if (process.env.NODE_ENV === 'production') {
+    https.createServer({key: '', cert: ''}, app.callback()).listen(4500)
+} else {
+    app.listen(8000)
+}
