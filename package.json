@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@types/flux": "^3.1.0",
+    "axios": "^0.16.1",
+    "classnames": "^2.2.5",
     "cron": "^1.2.1",
     "dotenv": "^4.0.0",
     "flux": "^3.1.2",
     "immutable": "^3.8.1",
+    "keymirror": "^0.1.1",
     "koa": "^2.2.0",
     "koa-convert": "^1.2.0",
     "koa-generic-session": "^1.11.5",
@@ -27,6 +30,8 @@
     "react-dom": "16.0.0-alpha.12"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/classnames": "^2.2.0",
     "@types/dotenv": "^4.0.0",
     "@types/koa": "^2.0.39",
     "@types/koa-generic-session": "^1.0.0",

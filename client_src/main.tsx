@@ -1,9 +1,11 @@
+/// <reference path="./declarations.d.ts" />
+
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
 import appDispatcher from './dispatcher'
 import AppStore from './store'
-import AppView from './views/AppView/AppView'
+import App from './containers/App/App'
 
 window.addEventListener('DOMContentLoaded', () => {
     const appStore = new AppStore(appDispatcher)
@@ -11,8 +13,8 @@ window.addEventListener('DOMContentLoaded', () => {
     appDispatcher.dispatch({type: 'COMMENT_UPDATED', entity: null})
 
     appStore.addListener(() => {
-        ReactDOM.render(<AppView state={appStore.getState()} />, document.getElementById('root'))
+        ReactDOM.render(<App state={appStore.getState()} />, document.getElementById('root'))
     })
 
-    ReactDOM.render(<AppView state={appStore.getState()} />, document.getElementById('root'))
+    ReactDOM.render(<App state={appStore.getState()} />, document.getElementById('root'))
 })

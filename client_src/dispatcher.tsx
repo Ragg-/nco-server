@@ -1,3 +1,6 @@
 import {Dispatcher} from 'flux'
-const appDispatcher = new Dispatcher()
+
+import {PayloadTypes} from './actions'
+
+const appDispatcher = new Dispatcher<PayloadTypes>()
 export default appDispatcher

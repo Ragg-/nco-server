@@ -28,6 +28,10 @@ app.use(koaConvert(session({
     }),
 }, app)))
 
+const wsRouter = new Router()
+wsRouter.all('/api/stream', )
+app.ws.use()
+
 
 app.use(koaStatic(__dirname + '/../client/', {index: 'index.html'}))
 app.use(koaConvert(betterBody({multipart: true})))

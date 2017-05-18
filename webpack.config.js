@@ -35,7 +35,7 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             modules: true,
-                            localIdentName: '[name]'
+                            localIdentName: '[local]'
                             // localIdentName: DELIR_ENV === 'dev'
                             //     ? '[path][name]__[local]--[emoji:4]'
                             //     : '[local]--[hash:base64:5]',

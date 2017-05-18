@@ -1,0 +1,55 @@
+html,
+body
+    margin 0
+    padding 0
+    width 100%
+    height 100%
+    font-size: 14px
+
+*, *::before, *::after
+    box-sizing border-box
+
+:global(#root)
+    width 100%
+    height 100%
+
+:global
+    .Input
+        display block
+        width 100%
+        padding 8px
+        font-size: 16px
+        outline none
+
+    .FormGroup
+        display flex
+        margin-bottom 16px
+
+        .FormGroup_Label
+            width 5pxem
+
+.AppView
+    display flex
+    width 100%
+    height 100%
+
+    .Authorize
+        width 100%
+        height 100%
+        max-width: 800px
+        max-height: 600px
+        margin 0 auto
+        background-color #fff
+
+        .Authorize_Inner
+            padding 32px
+            margin 0 auto
+
+        h1
+            margin 0
+            margin-bottom 16px
+            font-weight normal
+            font-size: 1.5rem
+
+
+        // .Authorize_Input

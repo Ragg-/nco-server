@@ -14,11 +14,6 @@ declare module 'koa' {
     }
 }
 
-declare module '*.styl' {
-    const _: {[className: string]: string}
-    export = _
-}
-
 declare namespace Nco {
     interface Session {
         nicoSessionKey?: string

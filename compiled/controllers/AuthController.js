@@ -15,13 +15,19 @@ exports.signin = (ctx) => __awaiter(this, void 0, void 0, function* () {
     if (!userId || !password) {
         return ResponseHelper.invalidRequest(ctx);
     }
-    node_nicovideo_api_1.NicoSession.login(userId, password);
-});
-exports.check = (ctx) => __awaiter(this, void 0, void 0, function* () {
-    if (!ctx.session.nicoSessionKey) {
-        ctx.body = {
-            authorized: false,
-        };
-        return;
+    try {
+        const session = yield node_nicovideo_api_1.NicoSession.login(userId, password);
+        ctx.session.nicoSessionKey = session.sessionId;
     }
+    catch (e) {
+        if (e instanceof node_nicovideo_api_1.NicoException) {
+            ctx.body = { success: true };
+        }
+        else {
+            throw e;
+        }
+    }
+});
+exports.status = (ctx) => __awaiter(this, void 0, void 0, function* () {
+    ctx.body = { authorized: !!ctx.session.nicoSessionKey };
 });
